@@ -13,7 +13,7 @@ function load-dotenv {
 
 function install {
     python -m pip install --upgrade pip
-    python -m pip install --editable "$THIS_DIR[dev]/"
+    python -m pip install --editable "$THIS_DIR/"
 }
 
 function lint {
