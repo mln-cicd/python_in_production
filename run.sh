@@ -24,6 +24,7 @@ function build {
     python -m build --sdist --wheel "$THIS_DIR/"
 }
 
+
 function start {
     build # Call task dependency
     python -m SimpleHTTPServer 9000
