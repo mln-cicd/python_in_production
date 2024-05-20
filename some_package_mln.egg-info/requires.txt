@@ -5,6 +5,7 @@ importlib-metadata
 
 [dev]
 some_package[release,static-code-qa,test]
+build
 
 [release]
 build

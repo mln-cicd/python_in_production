@@ -1,7 +1,12 @@
+.gitignore
 .pre-commit-config.yaml
 README.md
+pyproject copy.tomllll
 pyproject.toml
-.github/workflows/pre-commit-hooks.yml
+run.sh
+setup.py.sample
+.github/workflows/pre-commit-hooks.yaml.sample
+.github/workflows/publish.yaml
 8/cyclomatic_complexity.py_
 8/unformatted.py_
 9/76/.pre-commit-config.yaml.sample
@@ -14,9 +19,12 @@ pyproject.toml
 9/9.1a/check-code-quality.sh
 9/9.1a/ruff.toml.sample
 9/9.1a/type_hints.py_
+9/9.1a copy/ruff.toml
 9/9.1b/.black.toml
 9/9.1b/check-code-quality.sh
 9/9.1b/type_hints.py_
+dist/some_package_mln-0.0.0-py3-none-any.whl
+dist/some_package_mln-0.0.0.tar.gz
 some_package/__init__.py
 some_package/cities.json
 some_package/gha.md

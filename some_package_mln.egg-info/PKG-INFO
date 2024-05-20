@@ -17,6 +17,7 @@ Requires-Dist: build; extra == "release"
 Requires-Dist: twine; extra == "release"
 Provides-Extra: dev
 Requires-Dist: some_package[release,static-code-qa,test]; extra == "dev"
+Requires-Dist: build; extra == "dev"
 
 # python_in_production
 ## Notion links
