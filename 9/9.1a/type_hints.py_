@@ -1,0 +1,26 @@
+"""This module demonstrates the use of TypedDict to define a type for a student dictionary.
+
+The `Student` TypedDict defines the expected structure of a student dictionary, with a `name` field of type `str` and an `age` field of type `int`.
+
+The example code creates a `student` dictionary that does not match the expected structure, and an `other_student` dictionary that does match the expected structure.
+"""
+
+from typing import TypedDict
+
+
+class Student(TypedDict):
+    """Defines a TypedDict representing a student, with fields for the student's name (a string) and age (an integer)."""
+
+    name: str
+    age: int
+
+
+student: Student = {
+    "age": "Marcy",
+    "name": 25,
+}
+
+student["age"]
+
+other_student = Student(name="dédé", age=25)
+print(other_student)

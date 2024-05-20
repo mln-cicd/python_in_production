@@ -1,0 +1,10 @@
+[tool.ruff]
+line-length = 99
+select = [
+    "E", # Pycodestyle errors
+    "F", # Pyflakes codes
+    "I", # isort violations
+]
+ignore = [
+    "E501", # Line too long
+]
