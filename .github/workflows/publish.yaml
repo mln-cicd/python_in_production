@@ -1,5 +1,5 @@
 # .github/workflows/<some name>.yaml
-name: Pre-commit Hooks
+name: Publish
 
 on:
   pull_request:
