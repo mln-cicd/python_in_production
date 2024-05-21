@@ -13,7 +13,7 @@ function load-dotenv {
 
 function install {
     python -m pip install --upgrade pip
-    python -m pip install --editable "$THIS_DIR[dev]/"
+    python -m pip install --editable "$THIS_DIR/"
 }
 
 function lint {
@@ -23,6 +23,7 @@ function lint {
 function build {
     python -m build --sdist --wheel "$THIS_DIR/"
 }
+
 
 function start {
     build # Call task dependency
@@ -34,11 +35,11 @@ function test {
 }
 
 function publish:test {
-    load-dotenv
-    twine upload  dist/* \
-    --repository testpypi \
-    --username=__token__ \
-    --password="$TEST_PYPI_TOKEN"
+    try-load-dotenv || true
+    twine upload dist/* \
+        --repository testpypi \
+        --username=__token__ \
+        --password="$TEST_PYPI_TOKEN"
 }
 
 function default {

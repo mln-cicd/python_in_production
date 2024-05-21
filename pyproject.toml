@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "some-package-mln"
+version = "0.0.4"
 authors = [
     {name = "mlenozach", email = "matthieu.le.nozach@gmail.com"},
 ]
@@ -18,7 +19,7 @@ dependencies = [
     "requests",
     'importlib-metadata; python_version<"3.10"',
 ]
-dynamic = ["version"]
+# dynamic = ["version"]
 
 
 [tool.setuptools.packages.find]
@@ -34,7 +35,7 @@ some_package = ["**"]
 [project.optional-dependencies]
 test = ["pytest", "pytest-cov"]
 release = ["build", "twine"]
-dev = ["some_package[test, release, static-code-qa]"]
+dev = ["some_package[test, release, static-code-qa]", "build", "twine"]
 
 
 [tool.ruff]
