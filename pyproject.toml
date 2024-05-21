@@ -34,7 +34,7 @@ some_package = ["**"]
 [project.optional-dependencies]
 test = ["pytest", "pytest-cov"]
 release = ["build", "twine"]
-dev = ["some_package[test, release, static-code-qa]", "build"]
+dev = ["some_package[test, release, static-code-qa]", "build", "twine"]
 
 
 [tool.ruff]
