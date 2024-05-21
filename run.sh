@@ -5,6 +5,11 @@ set -e
 
 THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+function load-dotenv {
+    while read -r line; do
+        export "$line"
+    done < <(grep -v '^#' "$THIS_DIR/.env" | grep -v '^$')
+}
 
 function install {
     python -m pip install --upgrade pip
@@ -30,11 +35,11 @@ function test {
 }
 
 function publish:test {
-    load-dotenv
-    twine upload  dist/* \
-    --repository testpypi \
-    --username=__token__ \
-    --password="$TEST_PYPI_TOKEN"
+    try-load-dotenv || true
+    twine upload dist/* \
+        --repository testpypi \
+        --username=__token__ \
+        --password="$TEST_PYPI_TOKEN"
 }
 
 function default {
